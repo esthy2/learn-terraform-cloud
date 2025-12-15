@@ -1,7 +1,9 @@
 provider "aws" {
   region = var.region
+  assume_role {
+    role_arn = var.assume_role_arn
+  }
 }
-
 data "aws_ami" "ubuntu" {
   most_recent = true
 
